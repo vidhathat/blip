@@ -85,7 +85,10 @@ const NFTScreen = () => {
     return (
         <div>
 
-            <h1 className='text-5xl font-extrabold text-center py-4 text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-600'>Multi-Chain NFT Valuator</h1>
+            <div className='py-4'>
+                <h1 className='text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-600'>BLIP</h1>
+                <p className='text-center'>home for NFTs</p>
+            </div>
             {/* Input to add eth or solana address with tailwind styling */}
             <form onSubmit={(e) => handleAddress(e)} className='flex justify-center'>
                 <input
