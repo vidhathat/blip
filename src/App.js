@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Auth, useAuth } from "@arcana/auth-react";
+
+const onLogin = () => {
+  // Route to authenticated page
+  console.log("Logged in");
+}
 
 function App() {
+  const auth = useAuth();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {auth.loading ? (
+        "Loading"
+      ) : auth.isLoggedIn ? (
+        <p>Logged In</p>
+      ) : (
+        <div>
+          <Auth externalWallet={true} theme={"light"} onLogin={onLogin}/>
+        </div>
+      )}
     </div>
   );
 }
