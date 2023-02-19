@@ -1,2 +1,0 @@
-# blip
-Home for nfts
