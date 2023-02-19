@@ -1,4 +1,5 @@
 import { Auth, useAuth } from "@arcana/auth-react";
+import NFTScreen from "./Components/AppScreen/NFTScreen";
 
 const onLogin = () => {
   // Route to authenticated page
@@ -8,14 +9,14 @@ const onLogin = () => {
 function App() {
   const auth = useAuth();
   return (
-    <div>
+    <div className="bg-black text-white flex items-center justify-center min-h-screen">
       {auth.loading ? (
         "Loading"
       ) : auth.isLoggedIn ? (
-        <p>Logged In</p>
+        <NFTScreen />
       ) : (
         <div>
-          <Auth externalWallet={true} theme={"light"} onLogin={onLogin}/>
+          <Auth externalWallet={true} theme="light" onLogin={onLogin}/>
         </div>
       )}
     </div>
